@@ -23,7 +23,11 @@ module.exports = {
           presets:['es2015', 'react']
         })
       ]
-    }]
+    },
+    {test: /\.css$/, loader: 'style!css'},
+    {test: /\.scss$/, loader: 'style!css!sass'},
+    {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'},
+    {test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/, loaders: ['file-loader']}]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
